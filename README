@@ -1,0 +1,26 @@
+CS15 tictactoe README
+
+Overview:
+    The main function of my program is to carry out a digital version of tic tac toe involving two players (playerX and playerO).
+    The classes are split into the main App class (given), as well as two classes that I created (TicTacToeLogic and Player). Both
+    these classes implement different interfaces given by the Javadocs, CS15TicTacToePlayer and CS15TicTacToeGame. Additionally,
+    the Javadocs features four other classes that I didn't create myself (also given by the Javadocs). TicTacToeLogic instantiates
+    instances of classes CS15TicTacToeBoard and CS15TicTacToeController as well as PlayerX and PlayerO. Since TicTacToeLogic implements
+    CS15TicTacToeGame, I defined the methods from the interface to carry out basic functions of the game (ie. restarting the game or
+    claiming that no player wins). The App class contains TicTacToeLogic which contains CS15TicTacToeController, CS15TicTacToeBoard,
+    and Player. Player knows about CS15TicTacToeController and CS15TicTacToeBoard.
+
+Design Choices:
+    I used association in the Player class (the class that implements CS15TicTacToePlayer) in the constructor. This is necessary
+    because there are two instances of player, playerX and playerO. Each player has a different string ID (x or o), and each player
+    needs to access the board and controller. I added an accessor method in Player.java called getID where I returned a String
+    of the player's ID (either x or o). Player ID is a private variable, meaning I have to call the public String getID() method in
+    a different class. In the TicTacToeLogic.Java class, the local variable, player, calls getID so that the
+    controller can return a string with the player's ID in it.
+
+Known bugs:
+    None
+
+Hours Spent:
+    I spent a total of six hours on the project
+
